@@ -1,3 +1,5 @@
+using GamePrototype.Items.EconomicItems;
+
 namespace GamePrototype.Units;
 {
     public abstract class Unit
@@ -38,7 +40,18 @@ namespace GamePrototype.Units;
         protected virtual void DamageReceiveHandler()
         {
         }
-
         public abstract uint GetUnitDamage();
+        public abstract void HandleCombatComplete();
+
+        public virtual void AddItemToInventory(Item item)
+        {
+            if (!inventory.TryAdd(item))
+            {
+                Console.WriteLine($"Inventory of {Name} is full.");
+            }
+        }
+        
+        public void AddItemFromUnitToInventory(Unit unit)
+        {}
     }
 }
