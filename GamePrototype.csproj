@@ -12,7 +12,6 @@
       <Folder Include="Combat\" />
       <Folder Include="Dungeon\" />
       <Folder Include="Game\" />
-      <Folder Include="Units\" />
     </ItemGroup>
 
 </Project>
